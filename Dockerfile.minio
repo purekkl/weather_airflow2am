@@ -1,0 +1,16 @@
+FROM minio/minio
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+
+# Set the execute permissions on the entrypoint script
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+RUN curl -O https://dl.min.io/client/mc/release/linux-amd64/mc && \
+    mv mc /usr/local/bin/mc && \
+    chmod +x /usr/local/bin/mc
+
+
+# Set the entrypoint to the custom script
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+
+# Command to start the MinIO server (this will be handled by the entrypoint script)
+CMD ["server", "/data",'--console-address', ":9001"]

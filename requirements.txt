@@ -1,0 +1,16 @@
+apache-airflow==2.9.0
+apache-airflow-providers-google
+apache-airflow-providers-apprise
+apache-airflow-providers-amazon
+airflow-provider-great-expectations
+selenium
+datetime
+requests==2.31.0
+pandas==2.1.4
+pandas-gbq==0.22.0
+numpy==1.24.4
+minio==7.2.0
+boto3
+beautifulsoup4
+sqlalchemy
+s3fs
